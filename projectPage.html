@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lana’s Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="projects-page">
+    <h1 class="page-title">Lana's <span>Projects</span></h1>
+
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="img/fit.jpeg" alt="Project 1 Fitness">
+        <div class="project-info">
+          <h2>Fitness Website</h2>
+          <p>Strong Body Mind is a sleek, dark-themed fitness website designed to help users discover and explore a variety of exercises.Built with HTML and CSS,user-friendly design.</p>
+          <button id="WebButton1" class="demo-btn" target="_blank">View Live Demo</button>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="img/cal.jpeg" alt="Project 2 Calculator">
+        <div class="project-info">
+          <h2>Calculator Website</h2>
+          <p>This simple yet functional web-based calculator allows users to perform basic arithmetic operations.responsive across devices.front-end development skills using HTML, CSS, and JavaScript.</p>
+         <button id="WebButton2" class="demo-btn" target="_blank">View Live Demo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById("WebButton1").addEventListener("click", () => {
+  window.location.href = "https://strong-body-mind.netlify.app/";
+});
+ document.getElementById("WebButton2").addEventListener("click", () => {
+  window.location.href = "https://lanaferzan.github.io/Basic-calculator/";
+});
+
+</script>
+</body>
+</html>

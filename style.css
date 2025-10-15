@@ -1,0 +1,521 @@
+/* ========== GENERAL BODY ========== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #e0e0e0;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.582),
+      rgba(8, 8, 8, 0.884)
+    ),
+    url("img/back.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ========== MAIN GRID CONTAINER ========== */
+.parent {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: auto auto auto;
+  gap: 1px;
+  background-color: #2a2a2ab7;
+  border-radius: 25px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+/* ========== LEFT PANEL (PROFILE) ========== */
+.div1 {
+  background-color: #0000008e;
+  padding: 2rem;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.div1 img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px dashed rgba(255,255,255,0.2);
+  padding: 6px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.div1 h1 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.div1 p {
+  font-size: 0.90rem;
+  line-height: 1.5;
+  color: #cfcfcf;
+}
+.resume-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+/* ========== TOP RIGHT PANEL (HEADLINE) ========== */
+.div2 {
+  background-color: #0000008e;
+  padding: 2rem;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  border-top-right-radius: 25px;
+}
+
+.div2 h1 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.div2 p {
+  color: #cfcfcf;
+  font-size: 0.90rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* ========== BUTTON STYLE ========== */
+.div2 button, .demo-btn {
+  position: relative;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.4),
+              inset 0 -1px 2px rgba(0,0,0,0.3),
+              0 4px 20px rgba(0,0,0,0.25);
+  overflow: hidden;
+  transition: all 0.35s ease;
+  width: auto;
+  max-width: 100%;
+}
+
+.div2 button::before, .demo-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255,255,255,0.3),
+    rgba(255,255,255,0.05)
+  );
+  pointer-events: none;
+}
+
+.div2 button::after, .demo-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.div2 button:hover, .demo-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 3px rgba(255,255,255,0.4),
+              inset 0 -1px 3px rgba(0,0,0,0.4),
+              0 6px 25px rgba(255,255,255,0.3);
+}
+
+.div2 button:hover::after, .demo-btn:hover::after {
+  left: 150%;
+}
+
+.div2 button:active, .demo-btn:active {
+  transform: translateY(0);
+}
+
+/* ========== BOTTOM RIGHT PANEL (SKILLS) ========== */
+.div3 {
+  background-color: #0000008e;
+  padding: 2rem;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  border-bottom-right-radius: 25px;
+}
+
+.div3 h1 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.div3 ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.div3 li {
+  background-color: #1a1a1a;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  color: #e0e0e0;
+  font-size: 0.80rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.skill-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+
+/* ========== PROJECT PAGE ========== */
+.projects-page {
+  background-attachment: scroll;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 3rem 5%;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page-title span {
+  font-size: 2.2rem;
+  color: #a1a1a1;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 895px;
+}
+
+.project-card {
+  background-color: #111111f1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.89);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 8px rgb(68, 68, 68);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-info h2 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-info p {
+  color: #cfcfcf;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+
+.project-info .demo-btn {
+  width: 100%;
+  max-width: none;
+}
+
+/* =================== RESPONSIVE MEDIA QUERIES =================== */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+  .parent {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    width: 95%;
+    max-width: 600px;
+    gap: 1px;
+  }
+
+  .div1, .div2, .div3 {
+    grid-column: 1 / 2;
+    grid-row: auto;
+    border-radius: 0;
+  }
+
+  .div1 {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 0;
+  }
+
+  .div3 {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 0;
+  }
+
+  .div1 img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .div1 h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .parent {
+    width: 100%;
+  }
+
+  .div1, .div2, .div3 {
+    padding: 1.5rem;
+  }
+
+  .div2 h1, .div3 h1 {
+    font-size: 1.3rem;
+  }
+
+  .div1 h1 {
+    font-size: 1.4rem;
+  }
+
+  .div2 p, .div1 p {
+    font-size: 0.85rem;
+  }
+
+  .div3 li {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .skill-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card img {
+    height: 180px;
+  }
+
+  .div2 button, .demo-btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .page-title span {
+    font-size: 1.8rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .parent {
+    border-radius: 15px;
+  }
+
+  .div1, .div2, .div3 {
+    padding: 1.2rem;
+  }
+
+  .div1 {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .div3 {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .div1 img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .div1 h1 {
+    font-size: 1.2rem;
+  }
+
+  .div2 h1, .div3 h1 {
+    font-size: 1.1rem;
+  }
+
+  .div2 p, .div1 p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .div3 ul {
+    gap: 0.4rem;
+  }
+
+  .div3 li {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .skill-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+
+  .div2 button, .demo-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .project-card img {
+    height: 150px;
+  }
+
+  .projects-page {
+    padding: 2rem 3%;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .page-title span {
+    font-size: 1.5rem;
+  }
+
+  .project-info {
+    padding: 1.2rem;
+  }
+
+  .project-info h2 {
+    font-size: 1.1rem;
+  }
+
+  .project-info p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .div1 img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .div1 h1 {
+    font-size: 1.1rem;
+  }
+
+  .div2 h1, .div3 h1 {
+    font-size: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ensure images scale properly */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
